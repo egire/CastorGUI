@@ -1,0 +1,1 @@
+JSKompactor.exe /i:"GUIManager.js,draggableGUI.js,GUIWindow.js,GUITexture.js,GUITextfield.js,GUITextarea.js,GUIText.js,GUISlider.js,GUISelect.js,GUIRadio.js,GUILabel.js,GUIGroup.js,GUIFieldset.js,GUICheckbox.js,GUIButton.js,GUIDialog.js" /o:"../dist/castorGUI.min.js" /w:"." /s:""
