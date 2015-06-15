@@ -11,6 +11,9 @@ var CASTORGUI = CASTORGUI || {};
 		this.id = id;
 		this.dialogSize = {width:options.w, height:options.h};				
 		this.dialogPosition = {x:options.x, y:options.y};
+		this.borderDialog = options.border || "2px solid black";
+		this.colorDialog = options.backgroundColor || "rgba(0,0,0,0.5)";
+		this.imageDialog = options.backgroundImage || "";
 		this.zIndex = options.zIndex || 1;
 		this.dialogVisible = true;
 		this.html = document.body || document.getElementsByTagName('body')[0];	
@@ -32,21 +35,22 @@ var CASTORGUI = CASTORGUI || {};
 		dialog.id = this.id;	
 		dialog.name = this.id;
 		dialog.style.zIndex = this.zIndex;
-		dialog.style.background = this.colorWindow;
+		dialog.style.background = this.colorDialog;
 		dialog.style.borderRadius = "8px";
-		dialog.style.backgroundImage = this.imageWindow;
-		dialog.style.border = this.borderWindow;		
-				
+		dialog.style.backgroundImage = this.imageDialog;
+		dialog.style.border = this.borderDialog;
+		
 		var close = document.createElement("button");
-		close.value = "X";
+		close.innerHTML = "X";
 		close.id = this.id+"_button";
-		close.style.position = "relative";
-		close.style.borderRadius = "10px";
-		close.style.right = "5px";
-		close.style.marginTop = "-2px";
-		close.style.width = "20px";
-		close.style.height = "20px";
-		close.onclick = function() {dialog.style.display = "none"};
+		close.style.position = "absolute";
+		close.style.borderRadius = "12px";
+		close.style.border = "2px solid black";
+		close.style.left = this.dialogSize.width - 12+"px";		
+		close.style.marginTop = "-12px";
+		close.style.width = "25px";
+		close.style.height = "25px";
+		close.onclick = function () { dialog.style.display = "none";};	
 		
 		if(append == true) {
 			this.html.appendChild(dialog);			
@@ -76,7 +80,7 @@ var CASTORGUI = CASTORGUI || {};
 			display = "none";
 			this.dialogVisible = false;
 		}
-		this.getElementById(this.id).css.display = display;
+		this.getElementById(this.id).style.display = display;
     };
 
     CASTORGUI.GUIDialog.prototype.isVisible = function() {

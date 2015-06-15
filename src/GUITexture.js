@@ -61,7 +61,7 @@ var CASTORGUI = CASTORGUI || {};
 			display = "none";
 			this.imageVisible = false;
 		}
-		this.getElementById(this.id).css.display = display;
+		this.getElementById(this.id).style.display = display;
     };
 
     CASTORGUI.GUITexture.prototype.isVisible = function() {

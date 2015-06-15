@@ -69,7 +69,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.guiVisible = false;
 		}
 		this.guiElements.forEach(function(e) {	
-			this.getElementById(e.id).css.display = display;
+			this.getElementById(e.id).style.display = display;
 		});
 		return;
     };

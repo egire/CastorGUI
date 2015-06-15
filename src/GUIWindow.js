@@ -9,20 +9,27 @@ var CASTORGUI = CASTORGUI || {};
 		this.id = id;		
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowsPosition = {x:options.x, y:options.y};
-		this.windowSize = {width:options.w, height:options.h};		
-		this.colorWindow = options.borderWindow || "rgba(0,0,0,0.5)";
-		this.imageWindow = options.imageWindow || "";
-		this.borderWindow = options.borderWindow || "2px solid black";		
-		this.colorTitle = options.colorTitle || "rgba(0,0,0,0.4)";		
-		this.imageTitle = options.imageTitle || "";
-		this.colorTextTitle = options.color || "white";		
-		this.heightTitle = options.heightTitle || "30px";
-		this.borderTitle = options.borderTitle || "1px solid black";
-		this.textAlign = options.textAlign || "center";		
-		this.title = options.title || "Title window";
+		this.windowSize = {width:options.w, height:options.h};	
+		
+		this.colorWindow = options.bakgroundColor || "rgba(0,0,0,0.5)";
+		this.imageWindow = options.bakgroundImage || "";
 		this.colorContent = options.colorContent || "rgba(0,0,0,0.1)";
 		this.imageContent = options.imageContent;		
+		
+		this.borderWindow = options.borderWindow || "2px solid black";	
 		this.borderContent = options.borderContent || "0px";
+		this.borderTitle = options.borderTitle || "1px solid black";
+		
+		this.colorTitle = options.colorTitle || "rgba(0,0,0,0.4)";		
+		this.imageTitle = options.imageTitle || "";
+		
+		this.heightTitle = options.heightTitle || "30px";
+		
+		this.textAlign = options.textAlign || "center";	
+		this.colorTextTitle = options.color || "white";
+		
+		this.title = options.title || "Title window";
+		
 		this.zIndex = options.zIndex || 1;
 		this.windowVisible = true;
 		
@@ -110,7 +117,7 @@ var CASTORGUI = CASTORGUI || {};
 			display = "none";
 			this.windowVisible = false;
 		}
-		this.getElementById(this.id).css.display = display;
+		this.getElementById(this.id).style.display = display;
     };
 
     CASTORGUI.GUIWindow.prototype.isVisible = function() {

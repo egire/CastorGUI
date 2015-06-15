@@ -86,7 +86,7 @@ var CASTORGUI = CASTORGUI || {};
 			display = "none";
 			this.textVisible = false;
 		}
-		this.getElementById(this.id).css.display = display;
+		this.getElementById(this.id).style.display = display;
     };
 
     CASTORGUI.GUIText.prototype.isVisible = function() {

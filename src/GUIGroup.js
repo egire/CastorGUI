@@ -40,7 +40,7 @@ var CASTORGUI = CASTORGUI || {};
 			this.groupVisible = false;
 		}
 		this.elementsGoup.forEach(function(e) {
-            this.getElementById(e.id).css.display = display;
+            this.getElementById(e.id).style.display = display;
         });
     };
 	
