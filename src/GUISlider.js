@@ -17,7 +17,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.stip = options.stip || 1;
 		this.value = options.value || (this.max/2);
 		this.zIndex = options.zIndex || 1;
-		this.orient = options.orient || "";// "vertical"
+		this.orient = options.orient || "horizontal"; // or "vertical"
 		this.sliderVisible = true;
 		this.onChangeSlider = callback || false;
 		
@@ -42,7 +42,7 @@ var CASTORGUI = CASTORGUI || {};
 		slider.id = this.id;	
 		slider.name = this.id;	
 		slider.style.zIndex = this.zIndex;
-		if(this.orient == "vertical") {
+		if(this.orient == "vertical" || this.orient == "Vertical") {
 			slider.style.writingMode = "bt-lr";
 			slider.style.WebkitAppearance = "slider-vertical";
 		}	

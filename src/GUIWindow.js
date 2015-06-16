@@ -17,18 +17,21 @@ var CASTORGUI = CASTORGUI || {};
 		this.imageContent = options.imageContent;		
 		
 		this.borderWindow = options.borderWindow || "2px solid black";	
-		this.borderContent = options.borderContent || "0px";
+		this.borderContent = options.borderContent || "0";
 		this.borderTitle = options.borderTitle || "1px solid black";
+		this.radiusWindow = options.radiusWindow || 8;
 		
 		this.colorTitle = options.colorTitle || "rgba(0,0,0,0.4)";		
 		this.imageTitle = options.imageTitle || "";
 		
-		this.heightTitle = options.heightTitle || "30px";
+		this.heightTitle = options.heightTitle || 30;
 		
-		this.textAlign = options.textAlign || "center";	
-		this.colorTextTitle = options.color || "white";
+		this.textAlign = options.titleTextAlign || "center";	
+		this.colorTextTitle = options.titleColor || "white";
 		
-		this.title = options.title || "Title window";
+		this.title = options.textTitle || "Title window";
+		
+		this.draggable = options.draggable || true;
 		
 		this.zIndex = options.zIndex || 1;
 		this.windowVisible = true;
@@ -49,15 +52,17 @@ var CASTORGUI = CASTORGUI || {};
 		windows.name = this.id;
 		windows.style.zIndex = this.zIndex;
 		windows.style.background = this.colorWindow;
-		windows.style.borderRadius = "8px";
+		windows.style.borderRadius = this.radiusWindow+"px";
 		windows.style.backgroundImage = this.imageWindow;
 		windows.style.border = this.borderWindow;
-		windows.draggable = "true";
-		windows.ondragstart = CASTORGUI.draggable(windows);
+		if(this.draggable == true) {
+			windows.draggable = "true";
+			windows.ondragstart = CASTORGUI.draggable(windows);
+		}
 		
 		var titreWindow = document.createElement("div");	
 		titreWindow.style.width = this.windowSize.width;		
-		titreWindow.style.height = this.heightTitle;	
+		titreWindow.style.height = this.heightTitle+"px";	
 		titreWindow.style.textAlign = this.textAlign;
 		titreWindow.style.borderRadius = "8px";
 		titreWindow.id = this.id+"_titre";		

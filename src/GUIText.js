@@ -9,15 +9,15 @@ var CASTORGUI = CASTORGUI || {};
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;		
-		this.html = document.body || document.getElementsByTagName('body')[0];	
-		this.textSize = options.size || 30;				
+		this.html = document.body || document.getElementsByTagName('body')[0];						
 		this.textPosition = {x:options.x, y:options.y};
+		this.textSize = options.size || 30;	
 		this.color = options.color || "white";
 		this.police = options.police || "Segoe UI";
 		this.texte = options.text || "CastorGUI";
 		this.zIndex = options.zIndex || 1;
-		this.bold = options.bold || "";
-		this.italic = options.italic || "";
+		this.bold = options.bold || ""; // bold
+		this.italic = options.italic || ""; //italic
 		this.textVisible = true;
 		
 		if(append == true) {

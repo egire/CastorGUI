@@ -12,6 +12,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.labelPosition = {x:options.x, y:options.y};
 		this.labelSize = {width:options.w, height:options.h};
+		this.textLabel = options.text;
 		this.zIndex = options.zIndex || 1;
 		this.labelVisible = true;
 		
@@ -29,6 +30,7 @@ var CASTORGUI = CASTORGUI || {};
 		label.style.position = "absolute";
 		label.id = this.id;	
 		label.name = this.id;
+		label.innerHTML = this.textLabel;
 		label.style.zIndex = this.zIndex;
 		
 		if(append == true) {

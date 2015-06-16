@@ -14,6 +14,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.borderDialog = options.border || "2px solid black";
 		this.colorDialog = options.backgroundColor || "rgba(0,0,0,0.5)";
 		this.imageDialog = options.backgroundImage || "";
+		this.radius = options.radius || 8;
 		this.zIndex = options.zIndex || 1;
 		this.dialogVisible = true;
 		this.html = document.body || document.getElementsByTagName('body')[0];	
@@ -36,7 +37,7 @@ var CASTORGUI = CASTORGUI || {};
 		dialog.name = this.id;
 		dialog.style.zIndex = this.zIndex;
 		dialog.style.background = this.colorDialog;
-		dialog.style.borderRadius = "8px";
+		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
 		

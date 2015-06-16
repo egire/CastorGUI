@@ -12,12 +12,12 @@ var CASTORGUI = CASTORGUI || {};
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.buttonPosition = {x:options.x, y:options.y};
 		this.buttonSize = {width:options.w, height:options.h};
-		this.value = options.value;
+		this.value = options.value || "Ok";
 		this.buttonVisible = true;
 		this.onClickButton = callback || false;
 		this.colorButton = options.colorButton || "rgba(0.5, 0.5, 0.5, 0.6)";
 		this.borderRadiusButton = options.borderRadiusButton || "10px";
-		this.borderWindow = options.borderWindow || "2px solid black";
+		this.borderButton = options.borderButton || "2px solid black";
 		this.colorText = options.colorText || "black";
 		this.zIndex = options.zIndex || 1;
 		
@@ -42,7 +42,7 @@ var CASTORGUI = CASTORGUI || {};
 		button.style.background = this.colorButton;
 		button.style.borderRadius = this.borderRadiusButton;
 		button.style.backgroundImage = this.imageButton;		
-		button.style.border = this.borderWindow;
+		button.style.border = this.borderButton;
 		button.style.color = this.colorText;
 		button.onclick = this.onClickButton;
 		
