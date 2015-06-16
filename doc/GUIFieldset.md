@@ -12,12 +12,12 @@ append | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 
 ##Options
 
-w: width of fieldset (in pixel)
-h: height of fieldset (in pixel)
-x: position left of fieldset (in pixel)
-y: position top of fieldset (in pixel)
-legend: value legend od the fieldset (string)
-zIndex: depth of the element (int) =&gt; 1 by default
+* w: width of fieldset (in pixel)
+* h: height of fieldset (in pixel)
+* x: position left of fieldset (in pixel)
+* y: position top of fieldset (in pixel)
+* legend: value legend od the fieldset (string)
+* zIndex: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 

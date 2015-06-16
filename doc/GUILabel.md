@@ -12,12 +12,12 @@ append | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 
 ##Options
 
-w: width of label (in pixel)
-h: height of label (in pixel)
-x: position left of label (in pixel)
-y: position top of label (in pixel)
-text: value text label (string)
-zIndex: depth of the element (int) =&gt; 1 by default
+* w: width of label (in pixel)
+* h: height of label (in pixel)
+* x: position left of label (in pixel)
+* y: position top of label (in pixel)
+* text: value text label (string)
+* zIndex: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 

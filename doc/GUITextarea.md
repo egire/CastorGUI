@@ -11,14 +11,14 @@ append | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 ---
 
 ##Options
-w: width of textarea (in pixel)
-h: height of textarea (in pixel)
-x: position left of textarea (in pixel)
-y: position top of textarea (in pixel)
-value: value of textarea (string)
-background: background of textarea (int) =&gt; "white" by default (optional)
-color: color the textarea (string) =&gt; "black" by default (optional)
-zIndex: depth of the element (int) =&gt; 1 by default
+* w: width of textarea (in pixel)
+* h: height of textarea (in pixel)
+* x: position left of textarea (in pixel)
+* y: position top of textarea (in pixel)
+* value: value of textarea (string)
+* background: background of textarea (int) =&gt; "white" by default (optional)
+* color: color the textarea (string) =&gt; "black" by default (optional)
+* zIndex: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 

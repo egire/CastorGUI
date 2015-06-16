@@ -13,10 +13,10 @@ append | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 
 ##Options
 
-x: position left of checkbox (in pixel)
-y: position top of checkbox (in pixel)
-size: size of checkbox (float) =&gt; "1.0" by default
-zIndex: depth of the element (int) =&gt; 1 by default
+* x: position left of checkbox (in pixel)
+* y: position top of checkbox (in pixel)
+* size: size of checkbox (float) =&gt; "1.0" by default
+* zIndex: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 

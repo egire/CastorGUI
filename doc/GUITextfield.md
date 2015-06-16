@@ -12,13 +12,13 @@ append | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 
 ##Options
 
-x: position left of textfield (in pixel)
-y: position top of textfield (in pixel)
-size: size the textfield (int) =&gt; 30 by default (optional)
-color: color the textfield (string) =&gt; "white" by default (optional)
-value: value of textfield (string)
-placeholder: value by default of textfield (string)
-zIndex: depth of the element (int) =&gt; 1 by default
+* x: position left of textfield (in pixel)
+* y: position top of textfield (in pixel)
+* size: size the textfield (int) =&gt; 30 by default (optional)
+* color: color the textfield (string) =&gt; "white" by default (optional)
+* value: value of textfield (string)
+* placeholder: value by default of textfield (string)
+* zIndex: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 

@@ -13,16 +13,16 @@ append | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 
 ##Options
 
-w: width of button (in pixel)
-h: height of button (in pixel)
-x: position left of button (in pixel)
-y: position top of button (in pixel)
-value: value text button (string) =&gt; "Ok" by default
-colorButton: color background of button (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.6)" by default
-borderRadiusButton: radius border of button (string)  =&gt; "10px" by default
-borderButton: border of button (string)  =&gt; "2px solid black" by default
-colorText: color text of button (string)  =&gt; "black" by default
-zIndex: depth of the element (int) =&gt; 1 by default
+* w: width of button (in pixel)
+* h: height of button (in pixel)
+* x: position left of button (in pixel)
+* y: position top of button (in pixel)
+* value: value text button (string) =&gt; "Ok" by default
+* colorButton: color background of button (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.6)" by default
+* borderRadiusButton: radius border of button (string)  =&gt; "10px" by default
+* borderButton: border of button (string)  =&gt; "2px solid black" by default
+* colorText: color text of button (string)  =&gt; "black" by default
+* zIndex: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 

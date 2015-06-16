@@ -11,8 +11,8 @@ guimanager | GUIManager | The gui manager
 
 ##Options
 
-x: position left of group (in pixel)
-y: position top of group (in pixel)
+* x: position left of group (in pixel)
+* y: position top of group (in pixel)
 
 ##Methods
 
