@@ -4,8 +4,8 @@ Creates a new GUIManager
 ####Parameters
 Name | Type | Description
 ---|---|---
-canvas | object | The element canvas
-css | string | The css GUI for all element
+**canvas** | object | The element canvas
+**css** | string | The css GUI for all element
 ---
 
 ##Methods

@@ -4,15 +4,15 @@ Creates a new GUIGroup
 ####Parameters
 Name | Type | Description
 ---|---|---
-id | string | The id and name element
-options | json | Options of element
-guimanager | GUIManager | The gui manager
+**id** | string | The id and name element
+**options** | json | Options of element
+**guimanager** | GUIManager | The gui manager
 ---
 
 ##Options
 
-* x: position left of group (in pixel)
-* y: position top of group (in pixel)
+* **x**: position left of group (in pixel)
+* **y**: position top of group (in pixel)
 
 ##Methods
 
