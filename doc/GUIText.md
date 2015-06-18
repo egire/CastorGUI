@@ -24,6 +24,12 @@ Name | Type | Description
 
 ##Methods
 
+###updateText(string) → void
+Updates the text of the GUI element
+
+###getTextWidth(string, string) → void
+Get size the text of the GUI element
+
 ###setVisible(bool) → void
 Set this GUI element to visible or invisible
 

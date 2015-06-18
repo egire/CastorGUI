@@ -6,7 +6,8 @@ var CASTORGUI = CASTORGUI || {};
 		
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
-		if(append == null || append == undefined) { append = true; }
+		this.append = append;
+		if(append == null || append == undefined) { this.append = true; }
 		
 		this.id = id;		
 		this.html = document.body || document.getElementsByTagName('body')[0];						
@@ -19,45 +20,60 @@ var CASTORGUI = CASTORGUI || {};
 		this.bold = options.bold || ""; // bold
 		this.italic = options.italic || ""; //italic
 		this.textVisible = true;
+		this.textElement = null;
+		this.font = null;
 		
-		if(append == true) {
-			this.addElement(append);
+		if(this.append == true) {
+			this.addElement(this.append);
 		}
 	};
 
 	Extends(CASTORGUI.GUIText, CASTORGUI.GUIManager);
 	
 	CASTORGUI.GUIText.prototype.addElement = function(append, element) {		
-		var font = this.textSize+"px "+this.police;
-		var text = document.createElement("div");	
-		text.style.position = "absolute";			
+		this.font = this.textSize+"px "+this.police;
+		this.textElement = document.createElement("div");	
+		this.textElement.style.position = "absolute";			
 		if(append == true) {
-			text.style.width = this.getTextWidth(this.texte, font).w+"px";
-			text.style.height = this.getTextWidth(this.texte, font).h+"px";
-			text.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
-			text.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";
-			text.style.display = "block";
-			text.style.whiteSpace = "nowrap";
+			this.textElement.style.width = this.getTextWidth(this.texte, this.font).w+"px";
+			this.textElement.style.height = this.getTextWidth(this.texte, this.font).h+"px";
+			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
+			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";
+			this.textElement.style.display = "block";
+			this.textElement.style.whiteSpace = "nowrap";
 		} else {
-			text.style.top = this.textPosition.y+"px";
-			text.style.left = this.textPosition.x+"px";
+			this.textElement.style.top = this.textPosition.y+"px";
+			this.textElement.style.left = this.textPosition.x+"px";
 		}		
-		text.style.font = font;
-		text.style.color = this.color;
-		text.style.fontStyle = this.italic;
-		text.style.fontWeight = this.bold;
-		text.innerHTML = this.texte;
-		text.id = this.id;	
-		text.name = this.id;
-		text.style.zIndex = this.zIndex;
+		this.textElement.style.font = this.font;
+		this.textElement.style.color = this.color;
+		this.textElement.style.fontStyle = this.italic;
+		this.textElement.style.fontWeight = this.bold;
+		this.textElement.innerHTML = this.texte;
+		this.textElement.id = this.id;	
+		this.textElement.name = this.id;
+		this.textElement.style.zIndex = this.zIndex;
 		
 		if(append == true) {
-			this.html.appendChild(text);
+			this.html.appendChild(this.textElement);
 		} else {
-			element.appendChild(text);
+			element.appendChild(this.textElement);
 		}
-		this.guiElements.push(text);
+		this.guiElements.push(this.textElement);
     };
+	
+	CASTORGUI.GUIText.prototype.updateText = function(texte){
+		if(this.append == true) {
+			this.textElement.style.width = this.getTextWidth(texte, this.font).w+"px";
+			this.textElement.style.height = this.getTextWidth(texte, this.font).h+"px";
+			this.textElement.style.top = (this.textPosition.y + this.getCanvasOrigine().top)+"px";
+			this.textElement.style.left = (this.textPosition.x + this.getCanvasOrigine().left)+"px";
+		} else {
+			this.textElement.style.top = this.textPosition.y+"px";
+			this.textElement.style.left = this.textPosition.x+"px";
+		}
+		this.textElement.innerHTML = texte;
+	};
 
 	CASTORGUI.GUIText.prototype.getTextWidth = function(texte, font){
 		var tag = document.createElement("div");
@@ -67,7 +83,7 @@ var CASTORGUI = CASTORGUI || {};
 		tag.style.whiteSpace = "nowrap";
 		tag.style.font = font;
 		tag.innerHTML = texte;
-		document.body.appendChild(tag);		
+		document.body.this.appendChild(tag);		
 		var result = {w:tag.clientWidth,h:tag.clientHeight};
 		document.body.removeChild(tag);
 		return result;
