@@ -74,7 +74,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.guiElements.push(this.textElement);
     };
 	
-	CASTORGUI.GUIText.prototype.updateText = function(texte){
+	CASTORGUI.GUIText.prototype.updateText = function(texte){		
 		if(this.append == true) {
 			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(texte, this.font).w+"px";
 			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(texte, this.font).h+"px";
@@ -84,7 +84,9 @@ var CASTORGUI = CASTORGUI || {};
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
 		}
+		this.fadeOut(this.textElement);
 		this.textElement.innerHTML = texte;
+		this.fadeIn(this.textElement);
 	};
 
 	CASTORGUI.GUIText.getTextWidth = function(texte, font){

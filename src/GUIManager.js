@@ -35,23 +35,24 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
 		el.style.opacity = 1;
-		(function fade() {
+		(function fade_moin() {
 			if ((el.style.opacity -= .1) < 0) {
 				el.style.display = "none";
-			} else {
-				requestAnimationFrame(fade);
+				el.style.opacity = 0;
+			} else if(el.style.opacity > 0) {
+				requestAnimationFrame(fade_moin);
 			}
 		})();
 	};
 
-	CASTORGUI.GUIManager.prototype.fadeIn = function(el, display){
+	CASTORGUI.GUIManager.prototype.fadeIn = function(el){
 		el.style.opacity = 0;
 		el.style.display = "block";
-		(function fade() {
+		(function fade_plus() {
 			var val = parseFloat(el.style.opacity);
-			if (!((val += .1) > 1)) {
+			if (!((val += 0.1) > 1.0)) {
 				el.style.opacity = val;
-				requestAnimationFrame(fade);
+				requestAnimationFrame(fade_plus);
 			}
 		})();
 	};
