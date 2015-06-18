@@ -20,6 +20,8 @@ Name | Type | Description
 * **text**: value text label (string) =&gt; "CastorGUI" by default
 * **bold**: text bold or no =&gt; "none" by default else "bold"
 * **italic**: text italic or no =&gt; "none" by default else "italic"
+* **centerVertical**: text aling center vertical (string) =&gt; "false" by default (optional) 
+* **centerHorizontal**: text aling center horizontal (string) =&gt; "false" by default (optional) 
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 
 ##Methods
@@ -27,13 +29,13 @@ Name | Type | Description
 ###updateText(string) → void
 Updates the text of the GUI element
 
-###getTextWidth(string, string) → void
+###getTextWidth(string, string) → void : static
 Get size the text of the GUI element
 
 ###setVisible(bool) → void
 Set this GUI element to visible or invisible
 
-###isVisible() → void
+###isVisible(bool, fade) → void
 Returns element if is visible or no
 
 ###dispose() → void

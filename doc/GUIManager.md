@@ -19,10 +19,16 @@ Returns the origine canvas (x,y)
 ###getCanvasWidth(string) → void
 Returns the size canvas (width, height)
 
+###fadeIn(element) → void
+Set fade in element
+
+###fadeOut(element) → void
+Set fade out element
+
 ###setVisible(bool) → void
 Set this GUI all element to visible or invisible
 
-###isVisible() → void
+###isVisible(bool, fade) → void
 Returns all element if is visible or no
 
 ###dispose() → void

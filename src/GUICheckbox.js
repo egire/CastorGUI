@@ -49,16 +49,20 @@ var CASTORGUI = CASTORGUI || {};
 		return this.html.removeChild(this.getElementById(this.id));
     };
    
-    CASTORGUI.GUICheckbox.prototype.setVisible = function(bool) {
+    CASTORGUI.GUICheckbox.prototype.setVisible = function(bool, fade) {
 		var display;
+		if(fade == undefined) fade = true;
+		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.checkboxVisible = true;
+			this.textVisible = true;
+			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.checkboxVisible = false;
+			this.textVisible = false;
+			if(fade == true) { this.fadeOut(element);}
 		}
-		this.getElementById(this.id).style.display = display;
+		if(fade == false) { element.style.display = display; }
     };
 
     CASTORGUI.GUICheckbox.prototype.isVisible = function() {

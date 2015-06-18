@@ -54,16 +54,20 @@ var CASTORGUI = CASTORGUI || {};
 		return this.html.removeChild(this.getElementById(this.id));
     };
    
-    CASTORGUI.GUISelect.prototype.setVisible = function(bool) {
+    CASTORGUI.GUISelect.prototype.setVisible = function(bool, fade) {
 		var display;
+		if(fade == undefined) fade = true;
+		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.selectVisible = true;
+			this.textVisible = true;
+			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.selectVisible = false;
+			this.textVisible = false;
+			if(fade == true) { this.fadeOut(element);}
 		}
-		this.getElementById(this.id).style.display = display;
+		if(fade == false) { element.style.display = display; }
     };
 
     CASTORGUI.GUISelect.prototype.isVisible = function() {

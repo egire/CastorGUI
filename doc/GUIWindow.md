@@ -41,7 +41,7 @@ add element in the GUIWindow
 ###setVisible(bool) → void
 Set this GUI element to visible or invisible
 
-###isVisible() → void
+###isVisible(bool, fade) → void
 Returns element if is visible or no
 
 ###dispose() → void

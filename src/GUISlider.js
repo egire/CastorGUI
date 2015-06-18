@@ -60,16 +60,20 @@ var CASTORGUI = CASTORGUI || {};
 		return this.html.removeChild(this.getElementById(this.id));
     };
    
-    CASTORGUI.GUITextarea.prototype.setVisible = function(bool) {
+    CASTORGUI.GUITextarea.prototype.setVisible = function(bool, fade) {
 		var display;
+		if(fade == undefined) fade = true;
+		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.sliderVisible = true;
+			this.textVisible = true;
+			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.sliderVisible = false;
+			this.textVisible = false;
+			if(fade == true) { this.fadeOut(element);}
 		}
-		this.getElementById(this.id).style.display = display;
+		if(fade == false) { element.style.display = display; }
     };
 
     CASTORGUI.GUITextarea.prototype.isVisible = function() {

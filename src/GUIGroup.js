@@ -30,18 +30,20 @@ var CASTORGUI = CASTORGUI || {};
 		return;
     };
 	
-	 CASTORGUI.GUIGroup.prototype.setVisible = function(bool) {
-        var display;
+	 CASTORGUI.GUIGroup.prototype.setVisible = function(bool, fade) {
+		var display;
+		if(fade == undefined) fade = true;
+		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.groupVisible = true;
+			this.textVisible = true;
+			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.groupVisible = false;
+			this.textVisible = false;
+			if(fade == true) { this.fadeOut(element);}
 		}
-		this.elementsGoup.forEach(function(e) {
-            this.getElementById(e.id).style.display = display;
-        });
+		if(fade == false) { element.style.display = display; }
     };
 	
     CASTORGUI.GUIGroup.prototype.isVisible = function() {

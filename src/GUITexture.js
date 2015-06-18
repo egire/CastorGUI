@@ -52,16 +52,20 @@ var CASTORGUI = CASTORGUI || {};
 		return this.html.removeChild(this.getElementById(this.id));
     };
    
-    CASTORGUI.GUITexture.prototype.setVisible = function(bool) {
+    CASTORGUI.GUITexture.prototype.setVisible = function(bool, fade) {
 		var display;
+		if(fade == undefined) fade = true;
+		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.imageVisible = true;
+			this.textVisible = true;
+			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.imageVisible = false;
+			this.textVisible = false;
+			if(fade == true) { this.fadeOut(element);}
 		}
-		this.getElementById(this.id).style.display = display;
+		if(fade == false) { element.style.display = display; }
     };
 
     CASTORGUI.GUITexture.prototype.isVisible = function() {
