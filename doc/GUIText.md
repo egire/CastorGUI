@@ -20,16 +20,16 @@ Name | Type | Description
 * **text**: value text label (string) =&gt; "CastorGUI" by default
 * **bold**: text bold or no =&gt; "none" by default else "bold"
 * **italic**: text italic or no =&gt; "none" by default else "italic"
-* **centerVertical**: text aling center vertical (string) =&gt; "false" by default (optional) 
-* **centerHorizontal**: text aling center horizontal (string) =&gt; "false" by default (optional) 
+* **centerVertical**: text align center vertical (string) =&gt; "false" by default (optional) 
+* **centerHorizontal**: text align center horizontal (string) =&gt; "false" by default (optional) 
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 
 ##Methods
 
-###updateText(string) → void
+###updateText(string:text) → void
 Updates the text of the GUI element
 
-###getTextWidth(string, string) → void : static
+###getTextWidth(string:text, string:font) → void : static
 Get size the text of the GUI element
 
 ###setVisible(bool) → void
