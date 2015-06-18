@@ -84,6 +84,15 @@ var CASTORGUI = CASTORGUI || {};
 			this.textElement.style.top = this.textPosition.y+"px";
 			this.textElement.style.left = this.textPosition.x+"px";
 		}
+		if(this.centerVertical == "true") {
+			var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(texte, this.font).h / 2))
+			this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+"px";			
+		}	
+		if(this.centerHorizontal == "true") {			
+			var marginTotal = (this.getCanvasWidth().width - CASTORGUI.GUIText.getTextWidth(texte, this.font).w);
+			var marginLeft = (marginTotal / 2);	
+			this.textElement.style.left = (marginLeft + this.getCanvasOrigine().left)+"px";
+		}
 		this.fadeOut(this.textElement);
 		this.textElement.innerHTML = texte;
 		this.fadeIn(this.textElement);
