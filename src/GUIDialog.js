@@ -2,7 +2,7 @@ var CASTORGUI = CASTORGUI || {};
 
 (function() {
    
-    CASTORGUI.GUIDialog = function (id, options, guimanager, append) {
+    CASTORGUI.GUIDialog = function (id, options, guimanager, callback, append) {
     
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
@@ -14,6 +14,10 @@ var CASTORGUI = CASTORGUI || {};
 		this.borderDialog = options.border || "2px solid black";
 		this.colorDialog = options.backgroundColor || "rgba(0,0,0,0.5)";
 		this.imageDialog = options.backgroundImage || "";
+		this.buttonDialog = options.closeDialog || "true";
+		this.imageButtonDialog = options.imageButtonDialog || "false";
+		this.urlImage = options.urlImage || null;
+		this.callback = callback;
 		this.radius = options.radius || 8;
 		this.zIndex = options.zIndex || 1;
 		this.dialogVisible = true;
@@ -40,27 +44,60 @@ var CASTORGUI = CASTORGUI || {};
 		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
-		
-		var close = document.createElement("button");
-		close.innerHTML = "X";
-		close.id = this.id+"_button";
-		close.style.position = "absolute";
-		close.style.borderRadius = "12px";
-		close.style.border = "2px solid black";
-		close.style.left = this.dialogSize.width - 12+"px";		
-		close.style.marginTop = "-12px";
-		close.style.width = "25px";
-		close.style.height = "25px";
-		close.onclick = function () { dialog.style.display = "none";};	
+		var eventButton = null;
 		
 		if(append == true) {
 			this.html.appendChild(dialog);			
 		} else {
 			element.appendChild(dialog);			
 		}
-		this.getElementById(this.id).appendChild(close);
+		
+		if(this.buttonDialog == "true")
+		{
+			eventButton = document.createElement("button");
+			eventButton.innerHTML = "X";
+			eventButton.id = this.id+"_button";
+			eventButton.style.position = "absolute";
+			eventButton.style.borderRadius = "12px";
+			eventButton.style.border = "2px solid black";
+			eventButton.style.left = this.dialogSize.width - 12+"px";		
+			eventButton.style.marginTop = "-12px";
+			eventButton.style.width = "25px";
+			eventButton.style.height = "25px";
+			eventButton.onclick = function () { dialog.style.display = "none";};			
+			this.getElementById(this.id).appendChild(eventButton);
+		} 
+		else if(this.imageButtonDialog == "true")
+		{			
+			var that = this;
+			this._getSizeImage(this.urlImage, function(result){				
+				var sizeImageW = result.w;
+				var sizeImageH = result.h;
+				eventButton = document.createElement("img");
+				eventButton.src = that.urlImage;
+				eventButton.id = that.id+"_button";
+				eventButton.style.position = "absolute";				
+				eventButton.style.left = that.dialogSize.width - (sizeImageW / 2)+"px";		
+				eventButton.style.marginTop = "-"+(sizeImageH / 2)+"px";
+				eventButton.style.width = sizeImageW+"px";
+				eventButton.style.height = sizeImageH+"px";
+				eventButton.style.cursor = "pointer";
+				eventButton.onclick = that.callback;
+				that.getElementById(that.id).appendChild(eventButton);
+			});			
+		}
+		
 		this.guiElements.push(dialog);
     };
+	
+	CASTORGUI.GUIDialog.prototype._getSizeImage = function(URL, callback) {
+		var image = new Image();
+		image.src = URL;
+		image.onload = function() {
+		var result = {w:image.width, h:image.height};
+			callback(result);
+		};
+	};
 
 	CASTORGUI.GUIDialog.prototype.add = function(element)
 	{

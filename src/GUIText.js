@@ -83,7 +83,7 @@ var CASTORGUI = CASTORGUI || {};
 		tag.style.whiteSpace = "nowrap";
 		tag.style.font = font;
 		tag.innerHTML = texte;
-		document.body.this.appendChild(tag);		
+		document.body.appendChild(tag);		
 		var result = {w:tag.clientWidth,h:tag.clientHeight};
 		document.body.removeChild(tag);
 		return result;
