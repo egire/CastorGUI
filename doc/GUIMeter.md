@@ -22,8 +22,8 @@ Name | Type | Description
 * **border**: border of element =&gt; 0 by default (optional)
 * **borderRadius**: radius border of element =&gt; 5 by default (optional)
 * **background**: background meter bar  =&gt; "rgba(0, 0, 0, 0.2)" by default (optional)
-* **backgroundValue**:  background value meter  =&gt; "#0f4fff" by default (optional)
-* **value**: Current value of the meter =&gt; 0 by default (optional)
+* **backgroundValue**:  background value meter  =&gt; "#1e9100" by default (optional)
+* **value**: current value of the meter =&gt; 0 by default (optional)
 * **orient**: orientation of the meter =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 
