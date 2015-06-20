@@ -43,7 +43,12 @@ var CASTORGUI = CASTORGUI || {};
 			this.textVisible = false;
 			if(fade == true) { this.fadeOut(element);}
 		}
-		if(fade == false) { element.style.display = display; }
+		if(fade == false) { 
+			this.guiElements.forEach(function(e) {	
+				this.getElementById(e.id).style.display = display;
+			});
+		}
+		return;
     };
 	
     CASTORGUI.GUIGroup.prototype.isVisible = function() {

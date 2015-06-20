@@ -57,7 +57,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.textElement.style.zIndex = this.zIndex;
 		
 		if(this.centerVertical == "true") {
-			var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h / 2))
+			var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(this.texte, this.font).h / 2));
 			this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+"px";			
 		}	
 		if(this.centerHorizontal == "true") {			
@@ -85,7 +85,7 @@ var CASTORGUI = CASTORGUI || {};
 			this.textElement.style.left = this.textPosition.x+"px";
 		}
 		if(this.centerVertical == "true") {
-			var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(texte, this.font).h / 2))
+			var marginTop = ((this.getCanvasWidth().height / 2) - (CASTORGUI.GUIText.getTextWidth(texte, this.font).h / 2));
 			this.textElement.style.top = (marginTop + this.getCanvasOrigine().top)+"px";			
 		}	
 		if(this.centerHorizontal == "true") {			

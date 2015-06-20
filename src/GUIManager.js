@@ -31,12 +31,12 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.style.appendChild(document.createTextNode(this.canvasCss));
 		}
 		this.head.appendChild(this.style);
-    };
+    };	
 	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
 		el.style.opacity = 1;
 		(function fade_moin() {
-			if ((el.style.opacity -= .1) < 0) {
+			if ((el.style.opacity -= 0.1) < 0) {
 				el.style.display = "none";
 				el.style.opacity = 0;
 			} else if(el.style.opacity > 0) {
@@ -83,18 +83,24 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		return;
     };	
    
-    CASTORGUI.GUIManager.prototype.setVisible = function(bool) {
+    CASTORGUI.GUIManager.prototype.setVisible = function(bool, fade) {
 		var display;
+		if(fade == undefined) fade = true;
+		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.guiVisible = true;
+			this.textVisible = true;
+			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.guiVisible = false;
+			this.textVisible = false;
+			if(fade == true) { this.fadeOut(element);}
 		}
-		this.guiElements.forEach(function(e) {	
-			this.getElementById(e.id).style.display = display;
-		});
+		if(fade == false) { 
+			this.guiElements.forEach(function(e) {	
+				this.getElementById(e.id).style.display = display;
+			});
+		}
 		return;
     };
 	
