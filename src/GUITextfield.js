@@ -64,11 +64,11 @@ var CASTORGUI = CASTORGUI || {};
 		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.textVisible = true;
+			this.textfieldVisible = true;
 			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.textVisible = false;
+			this.textfieldVisible = false;
 			if(fade == true) { this.fadeOut(element);}
 		}
 		if(fade == false) { element.style.display = display; }

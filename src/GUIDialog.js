@@ -37,7 +37,7 @@ var CASTORGUI = CASTORGUI || {};
 		dialog.style.top = (this.dialogPosition.y + this.getCanvasOrigine().top)+"px";
 		dialog.style.left = (this.dialogPosition.x + this.getCanvasOrigine().left)+"px";
 		dialog.style.position = "absolute";
-		dialog.id = this.id;	
+		dialog.id = this.id;
 		dialog.name = this.id;
 		dialog.style.zIndex = this.zIndex;
 		dialog.style.background = this.colorDialog;
@@ -115,11 +115,11 @@ var CASTORGUI = CASTORGUI || {};
 		var element = this.getElementById(this.id);
 		if(bool == true) {
 			display = "block";
-			this.textVisible = true;
+			this.dialogVisible = true;
 			if(fade == true) { this.fadeIn(element); }
 		} else {
 			display = "none";
-			this.textVisible = false;
+			this.dialogVisible = false;
 			if(fade == true) { this.fadeOut(element);}
 		}
 		if(fade == false) { element.style.display = display; }
