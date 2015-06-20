@@ -10,6 +10,9 @@ Name | Type | Description
 
 ##Methods
 
+###addStyle(string:css) → void
+Add style on GUI
+
 ###getElementById(string) → [GUIElement]()
 Returns the element corresponding.
 

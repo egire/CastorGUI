@@ -13,17 +13,24 @@ Name | Type | Description
 
 ##Options
 
-* **w**: width of slider (in pixel)
-* **h**: height of slider (in pixel)
-* **x**: position left of slider (in pixel)
-* **y**: position top of slider (in pixel)
-* **min**: min value slider =&gt; 0 by default (optional)
-* **max**: max value slider =&gt; 100 by default (optional)
-* **value**: Current value of the slider =&gt; 0 by default (optional)
-* **orient**: orientation of the slider =&gt; "horizontal" by default (optional)
+* **w**: width of progress bar (in pixel)
+* **h**: height of progress bar (in pixel)
+* **x**: position left of progress bar (in pixel)
+* **y**: position top of progress bar (in pixel)
+* **min**: min value progress bar =&gt; 0 by default (optional)
+* **max**: max value progress bar =&gt; 100 by default (optional)
+* **value**: Current value of the progress bar =&gt; 0 by default (optional)
+* **border**: border of element =&gt; 0 by default (optional)
+* **borderRadius**: radius border of element =&gt; 5 by default (optional)
+* **background**: background progress bar  =&gt; "rgba(0, 0, 0, 0.2)" by default (optional)
+* **backgroundValue**:  background value progress bar  =&gt; "#0f4fff" by default (optional)
+* **orient**: orientation of the progress bar =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 
 ##Methods
+
+###updateValue(int) → void
+Set this progress value GUI element 
 
 ###setVisible(bool) → void
 Set this GUI element to visible or invisible

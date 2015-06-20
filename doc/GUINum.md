@@ -13,15 +13,15 @@ Name | Type | Description
 
 ##Options
 
-* **w**: width of slider (in pixel)
-* **h**: height of slider (in pixel)
-* **x**: position left of slider (in pixel)
-* **y**: position top of slider (in pixel)
-* **min**: min value slider =&gt; 0 by default (optional)
-* **max**: max value slider =&gt; 100 by default (optional)
-* **stip**: graduation of slider =&gt; 1 by default (optional)
-* **value**: Current value of the slider =&gt; 50 by default (optional)
-* **orient**: orientation of the slider =&gt; "horizontal" by default (optional)
+* **w**: width of input number (in pixel)
+* **h**: height of input number (in pixel)
+* **x**: position left of input number (in pixel)
+* **y**: position top of input number (in pixel)
+* **min**: min value input number =&gt; 0 by default (optional)
+* **max**: max value input number =&gt; 100 by default (optional)
+* **stip**: graduation of input number =&gt; 1 by default (optional)
+* **value**: Current value of the input number =&gt; 50 by default (optional)
+* **orient**: orientation of the input number =&gt; "horizontal" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 
 ##Methods

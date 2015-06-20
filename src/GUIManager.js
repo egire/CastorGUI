@@ -18,20 +18,33 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.guiElements = [];
 		this.groups = [];
 		this.guiVisible = true;
+		this.style = null;
 		this.head = document.head || document.getElementsByTagName('head')[0] || null;
 		if(this.head == null) {
 			this.header = document.createElement('head');
 			this.head.appendChild(this.header);
 		}				
+		this.addStyle(this.canvasCss);
+    };	
+	
+	CASTORGUI.GUIManager.prototype.addStyle = function(css)
+	{
+		if(this.style) {
+			this.head.removeChild(this.getElementById("styleGUI")); 
+			this.canvasCss = this.canvasCss+css;
+		} else {
+			this.canvasCss = this.canvasCss;
+		}
 		this.style = document.createElement('style');
-		this.style.type = 'text/css';
+		this.style.type = 'text/css';	
+		this.style.id = "styleGUI";
 		if (this.style.styleSheet){
 			this.style.styleSheet.cssText = this.canvasCss;
 		} else {
 			this.style.appendChild(document.createTextNode(this.canvasCss));
 		}
-		this.head.appendChild(this.style);
-    };	
+		this.head.appendChild(this.style);		
+	};
 	
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
 		el.style.opacity = 1;
