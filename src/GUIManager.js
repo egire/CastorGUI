@@ -36,7 +36,8 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.canvasCss = this.canvasCss;
 		}
 		this.style = document.createElement('style');
-		this.style.type = 'text/css';	
+		this.style.type = 'text/css';
+		this.style.media = 'screen';
 		this.style.id = "styleGUI";
 		if (this.style.styleSheet){
 			this.style.styleSheet.cssText = this.canvasCss;
