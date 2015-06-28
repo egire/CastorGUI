@@ -32,6 +32,7 @@ Name | Type | Description
 * **textTitle**: Text of title (string)  =&gt; true by default
 * **draggable**: window draggable (bool)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
+* **className**: css class to customize the element =&gt; null by default
 
 ##Methods
 

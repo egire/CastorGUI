@@ -18,6 +18,7 @@ Name | Type | Description
 * **x**: position left of select (in pixel)
 * **y**: position top of select (in pixel)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
+* **className**: css class to customize the element =&gt; null by default
 
 ##Methods
 

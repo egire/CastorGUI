@@ -9,7 +9,8 @@ var CASTORGUI = CASTORGUI || {};
 		if(append == null || append == undefined) { append = true; }
 		
 		this.progress = null;
-		this.id = id;		
+		this.id = id;	
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.progressPosition = {x:options.x, y:options.y};
 		this.progressSize = {width:options.w, height:options.h};	
@@ -42,7 +43,8 @@ var CASTORGUI = CASTORGUI || {};
 		this.progress.style.top = (this.progressPosition.y + this.getCanvasOrigine().top)+"px";
 		this.progress.style.left = (this.progressPosition.x + this.getCanvasOrigine().left)+"px";
 		this.progress.style.position = "absolute";
-		this.progress.id = this.id;	
+		this.progress.id = this.id;
+		this.progress.className = this.className;	
 		this.progress.name = this.id;	
 		this.progress.style.zIndex = this.zIndex;
 		if(this.orient == "vertical" || this.orient == "Vertical") {

@@ -8,7 +8,8 @@ var CASTORGUI = CASTORGUI || {};
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;	
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.fieldsetPosition = {x:options.x, y:options.y};
 		this.fieldsetSize = {width:options.w, height:options.h};
@@ -31,7 +32,8 @@ var CASTORGUI = CASTORGUI || {};
 		fieldset.style.left = (this.fieldsetPosition.x + this.getCanvasOrigine().left)+"px";
 		fieldset.style.position = "absolute";
 		fieldset.id = this.id;	
-		fieldset.name = this.id;	
+		fieldset.name = this.id;
+		fieldset.className = this.className;
 		fieldset.style.zIndex = this.zIndex;
 		this.html.appendChild(fieldset);		
 		var legend = document.createElement("legend");

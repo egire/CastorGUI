@@ -8,7 +8,8 @@ var CASTORGUI = CASTORGUI || {};
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;	
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.radioPosition = {x:options.x, y:options.y};
 		this.radioSize = options.size || 1.0;
@@ -32,6 +33,7 @@ var CASTORGUI = CASTORGUI || {};
 		radio.style.left = (this.radioPosition.x + this.getCanvasOrigine().left)+"px";
 		radio.style.position = "absolute";
 		radio.id = this.id;	
+		radio.className = this.className;
 		radio.name = this.id;
 		radio.style.zIndex = this.zIndex;
 		radio.onclick = this.onClickRadio;

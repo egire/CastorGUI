@@ -8,7 +8,8 @@ var CASTORGUI = CASTORGUI || {};
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;	
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.numberPosition = {x:options.x, y:options.y};
 		this.numberSize = {width:options.w, height:options.h};	
@@ -41,7 +42,8 @@ var CASTORGUI = CASTORGUI || {};
 		number.style.left = (this.numberPosition.x + this.getCanvasOrigine().left)+"px";
 		number.style.position = "absolute";
 		number.id = this.id;	
-		number.name = this.id;	
+		number.name = this.id;
+		number.className = this.className;
 		number.style.zIndex = this.zIndex;		
 		number.onchange = this.onChangeNumber;
 		

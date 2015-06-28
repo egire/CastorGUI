@@ -18,11 +18,13 @@ Name | Type | Description
 * **x**: position left of button (in pixel)
 * **y**: position top of button (in pixel)
 * **value**: value text button (string) =&gt; "Ok" by default
-* **colorButton**: color background of button (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.6)" by default
+* **backgroundImage**: image background of button (string) =&gt; null by default
+* **backgroundColor**: color background of button (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.6)" by default
 * **borderRadiusButton**: radius border of button (string)  =&gt; "10px" by default
 * **borderButton**: border of button (string)  =&gt; "2px solid black" by default
 * **colorText**: color text of button (string)  =&gt; "black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
+* **className**: css class to customize the element =&gt; null by default
 
 ##Methods
 

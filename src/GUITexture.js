@@ -9,6 +9,7 @@ var CASTORGUI = CASTORGUI || {};
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;
+		this.className = options.className || null;
 		this.imageUrl = imageUrl;
 		this.textureClicked = callback || false;
 		this.imageSize = {width:options.w, height:options.h};				
@@ -39,6 +40,7 @@ var CASTORGUI = CASTORGUI || {};
 		img.style.zIndex = this.zIndex;
 		img.id = this.id;	
 		img.name = this.id;
+		img.className = this.className;
 		
 		if(append == true) {
 			this.html.appendChild(img);	

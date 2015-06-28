@@ -8,10 +8,11 @@ var CASTORGUI = CASTORGUI || {};
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;	
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
-		this.ckeckboxPosition = {x:options.x, y:options.y};
-		this.ckeckboxSize = options.size || 1.0;
+		this.checkboxPosition = {x:options.x, y:options.y};
+		this.checkboxSize = options.size || 1.0;
 		this.zIndex = options.zIndex || 1;
 		this.checkboxVisible = true;
 		this.onClickCheckbox = callback || false;
@@ -24,25 +25,26 @@ var CASTORGUI = CASTORGUI || {};
 	Extends(CASTORGUI.GUICheckbox, CASTORGUI.GUIManager);
 	
 	CASTORGUI.GUICheckbox.prototype.addElement = function(append, element)  {
-		var ckeckbox = document.createElement("input");
-		ckeckbox.type = "checkbox";
-		ckeckbox.style.transform = "scale("+this.ckeckboxSize+")";
-		ckeckbox.style.WebkitTransform = "scale("+this.ckeckboxSize+")";
-		ckeckbox.style.zoom = ""+this.ckeckboxSize+"";
-		ckeckbox.style.top = (this.ckeckboxPosition.y + this.getCanvasOrigine().top)+"px";
-		ckeckbox.style.left = (this.ckeckboxPosition.x + this.getCanvasOrigine().left)+"px";
-		ckeckbox.style.position = "absolute";
-		ckeckbox.id = this.id;	
-		ckeckbox.name = this.id;
-		ckeckbox.style.zIndex = this.zIndex;
-		ckeckbox.onclick = this.onClickCheckbox;
+		var checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.style.transform = "scale("+this.checkboxSize+")";
+		checkbox.style.WebkitTransform = "scale("+this.checkboxSize+")";
+		checkbox.style.zoom = ""+this.checkboxSize+"";
+		checkbox.style.top = (this.checkboxPosition.y + this.getCanvasOrigine().top)+"px";
+		checkbox.style.left = (this.checkboxPosition.x + this.getCanvasOrigine().left)+"px";
+		checkbox.style.position = "absolute";
+		checkbox.id = this.id;	
+		checkbox.name = this.id;
+		checkbox.className = this.className;
+		checkbox.style.zIndex = this.zIndex;
+		checkbox.onclick = this.onClickCheckbox;
 		
 		if(append == true) {
-			this.html.appendChild(ckeckbox);
+			this.html.appendChild(checkbox);
 		} else {
-			element.appendChild(ckeckbox);
+			element.appendChild(checkbox);
 		}
-		this.guiElements.push(ckeckbox);
+		this.guiElements.push(checkbox);
     };	
 
 	CASTORGUI.GUICheckbox.prototype.dispose = function() {

@@ -8,7 +8,8 @@ var CASTORGUI = CASTORGUI || {};
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];	
 		this.textareaPosition = {x:options.x, y:options.y};
 		this.textareaSize = {width:options.w, height:options.h};
@@ -35,6 +36,7 @@ var CASTORGUI = CASTORGUI || {};
 		textarea.style.position = "absolute";
 		textarea.id = this.id;	
 		textarea.name = this.id;
+		textarea.className = this.className;
 		textarea.innerHTML = this.value;
 		textarea.style.zIndex = this.zIndex;
 		textarea.style.background = this.background;		

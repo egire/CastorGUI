@@ -19,6 +19,7 @@ Name | Type | Description
 * **background**: background of textarea (int) =&gt; "white" by default (optional)
 * **color**: color the textarea (string) =&gt; "black" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
+* **className**: css class to customize the element =&gt; null by default
 
 ##Methods
 

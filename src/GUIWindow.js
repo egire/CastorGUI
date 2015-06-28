@@ -6,9 +6,10 @@ var CASTORGUI = CASTORGUI || {};
     
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
-		this.id = id;		
+		this.id = id;	
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
-		this.windowsPosition = {x:options.x, y:options.y};
+		this.windowPosition = {x:options.x, y:options.y};
 		this.windowSize = {width:options.w, height:options.h};	
 		
 		this.colorWindow = options.bakgroundColor || "rgba(0,0,0,0.5)";
@@ -42,22 +43,23 @@ var CASTORGUI = CASTORGUI || {};
 	Extends(CASTORGUI.GUIWindow, CASTORGUI.GUIManager);
 	
 	CASTORGUI.GUIWindow.prototype.addElement = function(append, element)  {
-		var windows = document.createElement("div");		
-		windows.style.width = this.windowSize.width+"px";
-		windows.style.height = this.windowSize.height+"px";		
-		windows.style.top = (this.windowsPosition.y + this.getCanvasOrigine().top)+"px";
-		windows.style.left = (this.windowsPosition.x + this.getCanvasOrigine().left)+"px";
-		windows.style.position = "absolute";
-		windows.id = this.id;	
-		windows.name = this.id;
-		windows.style.zIndex = this.zIndex;
-		windows.style.background = this.colorWindow;
-		windows.style.borderRadius = this.radiusWindow+"px";
-		windows.style.backgroundImage = this.imageWindow;
-		windows.style.border = this.borderWindow;
+		var window = document.createElement("div");		
+		window.style.width = this.windowSize.width+"px";
+		window.style.height = this.windowSize.height+"px";		
+		window.style.top = (this.windowPosition.y + this.getCanvasOrigine().top)+"px";
+		window.style.left = (this.windowPosition.x + this.getCanvasOrigine().left)+"px";
+		window.style.position = "absolute";
+		window.id = this.id;	
+		window.name = this.id;
+		window.className = this.className;
+		window.style.zIndex = this.zIndex;
+		window.style.background = this.colorWindow;
+		window.style.borderRadius = this.radiusWindow+"px";
+		window.style.backgroundImage = this.imageWindow;
+		window.style.border = this.borderWindow;
 		if(this.draggable == true) {
-			windows.draggable = "true";
-			windows.ondragstart = CASTORGUI.draggable(windows);
+			window.draggable = "true";
+			window.ondragstart = CASTORGUI.draggable(window);
 		}
 		
 		var titreWindow = document.createElement("div");	
@@ -83,7 +85,8 @@ var CASTORGUI = CASTORGUI || {};
 		close.style.marginTop = "-12px";
 		close.style.width = "25px";
 		close.style.height = "25px";
-		close.onclick = function () { windows.style.display = "none";};		
+		close.style.zIndex = 10000;
+		close.onclick = function () { window.style.display = "none";};		
 		
 		var contentWindow = document.createElement("div");
 		contentWindow.style.width = this.windowSize.width;
@@ -95,12 +98,12 @@ var CASTORGUI = CASTORGUI || {};
 		contentWindow.style.backgroundImage = this.imageContent;
 		contentWindow.style.border = this.borderContent;
 		
-		this.html.appendChild(windows);		
+		this.html.appendChild(window);		
 		this.getElementById(this.id).appendChild(titreWindow);
 		this.getElementById(this.id+"_titre").appendChild(close);
 		this.getElementById(this.id).appendChild(contentWindow);
 		
-		this.guiElements.push(windows);
+		this.guiElements.push(window);
     };
 
 	CASTORGUI.GUIWindow.prototype.add = function(element)

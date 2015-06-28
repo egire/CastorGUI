@@ -19,6 +19,7 @@ Name | Type | Description
 * **value**: value of textfield (string)
 * **placeholder**: value by default of textfield (string)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
+* **className**: css class to customize the element =&gt; null by default
 
 ##Methods
 

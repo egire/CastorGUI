@@ -8,14 +8,16 @@ var CASTORGUI = CASTORGUI || {};
 		
 		if(append == null || append == undefined) { append = true; }
 		
-		this.id = id;		
+		this.id = id;
+		this.className = options.className || null;
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.buttonPosition = {x:options.x, y:options.y};
 		this.buttonSize = {width:options.w, height:options.h};
 		this.value = options.value || "Ok";
 		this.buttonVisible = true;
-		this.onClickButton = callback || false;
-		this.colorButton = options.colorButton || "rgba(0.5, 0.5, 0.5, 0.6)";
+		this.onClickButton = callback || false;		
+		this.imageButton = options.backgroundImage || null;
+		this.colorButton = options.backgroundColor || "rgba(0.5, 0.5, 0.5, 0.6)";		
 		this.borderRadiusButton = options.borderRadiusButton || "10px";
 		this.borderButton = options.borderButton || "2px solid black";
 		this.colorText = options.colorText || "black";
@@ -39,6 +41,7 @@ var CASTORGUI = CASTORGUI || {};
 		button.id = this.id;	
 		button.name = this.id;
 		button.style.zIndex = this.zIndex;
+		button.className = this.className;
 		button.style.background = this.colorButton;
 		button.style.borderRadius = this.borderRadiusButton;
 		button.style.backgroundImage = this.imageButton;		
