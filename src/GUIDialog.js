@@ -19,7 +19,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.buttonDialog = options.closeDialog || "true";
 		this.imageButtonDialog = options.imageButtonDialog || "false";
 		this.urlImage = options.urlImage || null;
-		this.callback = callback;
+		this.callback = callback || null;
 		this.radius = options.radius || 8;
 		this.zIndex = options.zIndex || 1;
 		this.dialogVisible = true;
@@ -55,8 +55,7 @@ var CASTORGUI = CASTORGUI || {};
 			element.appendChild(dialog);			
 		}
 		
-		if(this.buttonDialog == "true")
-		{
+		if(this.buttonDialog == "true") {
 			eventButton = document.createElement("button");
 			eventButton.innerHTML = "X";
 			eventButton.id = this.id+"_button";
@@ -70,9 +69,7 @@ var CASTORGUI = CASTORGUI || {};
 			eventButton.style.zIndex = 10000;
 			eventButton.onclick = function () { dialog.style.display = "none";};			
 			this.getElementById(this.id).appendChild(eventButton);
-		} 
-		else if(this.imageButtonDialog == "true")
-		{			
+		} else if(this.imageButtonDialog == "true") {			
 			var that = this;
 			this._getSizeImage(this.urlImage, function(result){				
 				var sizeImageW = result.w;
@@ -90,7 +87,10 @@ var CASTORGUI = CASTORGUI || {};
 				eventButton.onclick = that.callback;
 				that.getElementById(that.id).appendChild(eventButton);
 			});			
-		}
+		} else if(this.buttonDialog == "false" && this.imageButtonDialog == "false" && this.callback) {
+			dialog.onclick = this.callback;
+			dialog.style.cursor = "pointer";
+		}	
 		
 		this.guiElements.push(dialog);
     };
