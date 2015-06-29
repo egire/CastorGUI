@@ -33,6 +33,9 @@ Name | Type | Description
 ###updateValue(int) → void
 Set this progress value GUI element 
 
+###getValue(int) → void
+Get value progress GUI element
+
 ###setVisible(bool) → void
 Set this GUI element to visible or invisible
 

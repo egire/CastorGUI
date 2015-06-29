@@ -88,6 +88,10 @@ var CASTORGUI = CASTORGUI || {};
 	CASTORGUI.GUIProgress.prototype.updateValue = function(value) {
 		this.progress.value = value;
 	};
+	
+	CASTORGUI.GUIProgress.prototype.getValue = function() {
+		return this.progress.value;
+	};
 
 	CASTORGUI.GUIProgress.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
