@@ -10,7 +10,7 @@ var CASTORGUI = CASTORGUI || {};
 		
 		this.meter = null
 		this.id = id;	
-		this.className = options.className || null;
+		this.className = options.className || "";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.meterPosition = {x:options.x, y:options.y};
 		this.meterSize = {width:options.w, height:options.h};	 

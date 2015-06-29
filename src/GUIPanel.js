@@ -16,7 +16,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.borderRadiusDiv = options.borderRadiusPanel || "10px";
 		this.imageDiv = options.backgroundImage || null;
 		this.colorDiv = options.backgroundColor || "black";
-		this.className = options.className || null;
+		this.className = options.className || "";
 		this.borderDiv = options.borderPanel || "2px solid black";
 		this.zIndex = options.zIndex || 1;
 		
@@ -74,7 +74,7 @@ var CASTORGUI = CASTORGUI || {};
 			this.divVisible = false;
 			if(fade == true) { this.fadeOut(element);}
 		}
-		if(fade == false) { element.style.display = display; }
+		if(fade == false) { element.style.display = display;}
     };
 
     CASTORGUI.GUIPanel.prototype.isVisible = function() {

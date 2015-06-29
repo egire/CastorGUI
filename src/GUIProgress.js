@@ -10,7 +10,7 @@ var CASTORGUI = CASTORGUI || {};
 		
 		this.progress = null;
 		this.id = id;	
-		this.className = options.className || null;
+		this.className = options.className || "";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.progressPosition = {x:options.x, y:options.y};
 		this.progressSize = {width:options.w, height:options.h};	

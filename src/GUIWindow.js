@@ -7,7 +7,7 @@ var CASTORGUI = CASTORGUI || {};
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
 		this.id = id;	
-		this.className = options.className || null;
+		this.className = options.className || "";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.windowPosition = {x:options.x, y:options.y};
 		this.windowSize = {width:options.w, height:options.h};	

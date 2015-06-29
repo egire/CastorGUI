@@ -50,7 +50,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 	CASTORGUI.GUIManager.prototype.fadeOut = function(el) {
 		el.style.opacity = 1;
 		(function fade_moin() {
-			if ((el.style.opacity -= 0.1) < 0) {
+			if ((el.style.opacity -= 0.1) < 0.1) {
 				el.style.display = "none";
 				el.style.opacity = 0;
 			} else if(el.style.opacity > 0) {
@@ -64,8 +64,8 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		el.style.display = "block";
 		(function fade_plus() {
 			var val = parseFloat(el.style.opacity);
-			if (!((val += 0.1) > 1.0)) {
-				el.style.opacity = val;
+			if (!((val += 0.1) > 0.9)) {
+				el.style.opacity = 1;
 				requestAnimationFrame(fade_plus);
 			}
 		})();
@@ -93,8 +93,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.guiElements.forEach(function(e) {	
 			var node = this.getElementById(e.id);
 			this.html.removeChild(node);
-		});
-		return;
+		});		
     };	
    
     CASTORGUI.GUIManager.prototype.setVisible = function(bool, fade) {
@@ -114,8 +113,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 			this.guiElements.forEach(function(e) {	
 				this.getElementById(e.id).style.display = display;
 			});
-		}
-		return;
+		}		
     };
 	
 	CASTORGUI.GUIManager.prototype.isVisible = function() {

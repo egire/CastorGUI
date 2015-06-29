@@ -9,7 +9,7 @@ var CASTORGUI = CASTORGUI || {};
 		if(append == null || append == undefined) { append = true; }
 		
 		this.id = id;	
-		this.className = options.className || null;
+		this.className = options.className || "";
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.fieldsetPosition = {x:options.x, y:options.y};
 		this.fieldsetSize = {width:options.w, height:options.h};

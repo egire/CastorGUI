@@ -10,7 +10,7 @@ var CASTORGUI = CASTORGUI || {};
 				
 		this.id = id;
 		this.html = document.body || document.getElementsByTagName('body')[0];	
-		this.className = options.className || null;
+		this.className = options.className || "";
 		this.dialogSize = {width:options.w, height:options.h};				
 		this.dialogPosition = {x:options.x, y:options.y};
 		this.borderDialog = options.border || "2px solid black";

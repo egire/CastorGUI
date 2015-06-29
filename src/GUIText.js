@@ -81,6 +81,7 @@ var CASTORGUI = CASTORGUI || {};
     };
 	
 	CASTORGUI.GUIText.prototype.updateText = function(texte){		
+		var that = this;		
 		if(this.append == true) {
 			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(texte, this.font).w+"px";
 			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(texte, this.font).h+"px";
@@ -98,10 +99,8 @@ var CASTORGUI = CASTORGUI || {};
 			var marginTotal = (this.getCanvasWidth().width - CASTORGUI.GUIText.getTextWidth(texte, this.font).w);
 			var marginLeft = (marginTotal / 2);	
 			this.textElement.style.left = (marginLeft + this.getCanvasOrigine().left)+"px";
-		}
-		this.fadeOut(this.textElement);
+		}				
 		this.textElement.innerHTML = texte;
-		this.fadeIn(this.textElement);
 	};
 
 	CASTORGUI.GUIText.getTextWidth = function(texte, font){
