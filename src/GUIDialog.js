@@ -22,8 +22,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.callback = callback || null;
 		this.radius = options.radius || 8;
 		this.zIndex = options.zIndex || 1;
-		this.dialogVisible = true;
-		
+		this.dialogVisible = true;	
 		
 		if(append == true) {
 			this.addElement(append);

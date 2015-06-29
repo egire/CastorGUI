@@ -81,7 +81,6 @@ var CASTORGUI = CASTORGUI || {};
     };
 	
 	CASTORGUI.GUIText.prototype.updateText = function(texte){		
-		var that = this;		
 		if(this.append == true) {
 			this.textElement.style.width = CASTORGUI.GUIText.getTextWidth(texte, this.font).w+"px";
 			this.textElement.style.height = CASTORGUI.GUIText.getTextWidth(texte, this.font).h+"px";
