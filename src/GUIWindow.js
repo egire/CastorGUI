@@ -35,7 +35,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.draggable = options.draggable || true;
 		
 		this.zIndex = options.zIndex || 1;
-		this.windowVisible = true;
+		this.windowVisible = false;
 		
 		this.addElement();
 	};
@@ -57,6 +57,7 @@ var CASTORGUI = CASTORGUI || {};
 		window.style.borderRadius = this.radiusWindow+"px";
 		window.style.backgroundImage = this.imageWindow;
 		window.style.border = this.borderWindow;
+		window.style.display = "none";
 		if(this.draggable == true) {
 			window.draggable = "true";
 			window.ondragstart = CASTORGUI.draggable(window);

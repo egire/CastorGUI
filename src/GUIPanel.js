@@ -12,7 +12,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		this.divPosition = {x:options.x, y:options.y};
 		this.divSize = {width:options.w, height:options.h};
-		this.divVisible = true;
+		this.divVisible = false;
 		this.borderRadiusDiv = options.borderRadiusPanel || "10px";
 		this.imageDiv = options.backgroundImage || null;
 		this.colorDiv = options.backgroundColor || "black";
@@ -48,6 +48,7 @@ var CASTORGUI = CASTORGUI || {};
 			div.style.borderRadius = this.borderRadiusDiv;
 			div.style.border = this.borderDiv;
 		}
+		div.style.display = "none";
 		
 		if(append == true) {
 			this.html.appendChild(div);

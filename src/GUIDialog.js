@@ -22,7 +22,7 @@ var CASTORGUI = CASTORGUI || {};
 		this.callback = callback || null;
 		this.radius = options.radius || 8;
 		this.zIndex = options.zIndex || 1;
-		this.dialogVisible = true;	
+		this.dialogVisible = false;		
 		
 		if(append == true) {
 			this.addElement(append);
@@ -46,6 +46,7 @@ var CASTORGUI = CASTORGUI || {};
 		dialog.style.borderRadius = this.radius+"px";
 		dialog.style.backgroundImage = this.imageDialog;
 		dialog.style.border = this.borderDialog;
+		dialog.style.display = "none";		
 		var eventButton = null;
 		
 		if(append == true) {

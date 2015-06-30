@@ -40,7 +40,7 @@ Name | Type | Description
 add element in the GUIWindow
 
 ###setVisible(bool) → void
-Set this GUI element to visible or invisible
+Set this GUI element to visible or invisible (false by default)
 
 ###isVisible(bool, fade) → void
 Returns element if is visible or no
