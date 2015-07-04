@@ -20,6 +20,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		this.guiVisible = true;
 		this.style = null;
 		this.head = document.head || document.getElementsByTagName('head')[0] || null;
+		this.html = document.body || document.getElementsByTagName('body')[0];
 		if(this.head == null) {
 			this.header = document.createElement('head');
 			this.head.appendChild(this.header);
@@ -90,9 +91,10 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 	};
 	
     CASTORGUI.GUIManager.prototype.dispose = function() {
+		var that = this;
 		this.guiElements.forEach(function(e) {	
-			var node = this.getElementById(e.id);
-			this.html.removeChild(node);
+			var node = that.getElementById(e.id);
+			that.html.removeChild(node);
 		});		
     };	
    

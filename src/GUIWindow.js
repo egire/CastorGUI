@@ -87,7 +87,7 @@ var CASTORGUI = CASTORGUI || {};
 		close.style.width = "25px";
 		close.style.height = "25px";
 		close.style.zIndex = 10000;
-		close.onclick = function () { window.style.display = "none";};		
+		close.onclick = function () { window.dispose();};		
 		
 		var contentWindow = document.createElement("div");
 		contentWindow.style.width = this.windowSize.width;

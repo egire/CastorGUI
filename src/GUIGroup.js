@@ -22,7 +22,7 @@ var CASTORGUI = CASTORGUI || {};
     };
 
     CASTORGUI.GUIGroup.prototype.dispose = function() {
-       var that = this;
+        var that = this;
 		this.elementsGoup.forEach(function(e) {						
 			var node = that.getElementById(e.id);
 			that.html.removeChild(node);

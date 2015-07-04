@@ -67,7 +67,7 @@ var CASTORGUI = CASTORGUI || {};
 			eventButton.style.width = "25px";
 			eventButton.style.height = "25px";
 			eventButton.style.zIndex = 10000;
-			eventButton.onclick = function () { dialog.style.display = "none";};			
+			eventButton.onclick = function () { dialog.dispose();};			
 			this.getElementById(this.id).appendChild(eventButton);
 		} else if(this.imageButtonDialog == "true") {			
 			var that = this;
