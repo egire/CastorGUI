@@ -1,5 +1,5 @@
-##new [GUINum](#)(id, options, guimanager, callback, append)
-Creates a new GUINum
+##new [GUISpinner](#)(id, options, guimanager, callback, append)
+Creates a new GUISpinner
 
 ####Parameters
 Name | Type | Description
@@ -34,4 +34,4 @@ Set this GUI element to visible or invisible
 Returns element if is visible or no
 
 ###dispose() → void
-Dispose the GUINum, and delete element.
+Dispose the GUISpinner, and delete element.

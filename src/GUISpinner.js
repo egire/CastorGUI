@@ -2,7 +2,7 @@ var CASTORGUI = CASTORGUI || {};
 
 (function() {
    
-	CASTORGUI.GUISlider = function (id, options, guimanager, callback, append) {
+	CASTORGUI.GUISpinner = function (id, options, guimanager, callback, append) {
     
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 		
@@ -27,9 +27,9 @@ var CASTORGUI = CASTORGUI || {};
 		}	
 	};
 
-	Extends(CASTORGUI.GUISlider, CASTORGUI.GUIManager);
+	Extends(CASTORGUI.GUISpinner, CASTORGUI.GUIManager);
 	
-	CASTORGUI.GUISlider.prototype.addElement = function(append, element)  {
+	CASTORGUI.GUISpinner.prototype.addElement = function(append, element)  {
 		var number = document.createElement("input");
 		number.type= "number";
 		number.min= this.min;
@@ -55,11 +55,11 @@ var CASTORGUI = CASTORGUI || {};
 		this.guiElements.push(number);
     };	
 
-	CASTORGUI.GUISlider.prototype.dispose = function() {
+	CASTORGUI.GUISpinner.prototype.dispose = function() {
 		return this.html.removeChild(this.getElementById(this.id));
     };
    
-    CASTORGUI.GUISlider.prototype.setVisible = function(bool, fade) {
+    CASTORGUI.GUISpinner.prototype.setVisible = function(bool, fade) {
 		var display;
 		if(fade == undefined) fade = true;
 		var element = this.getElementById(this.id);
@@ -75,7 +75,7 @@ var CASTORGUI = CASTORGUI || {};
 		if(fade == false) { element.style.display = display; }
     };
 
-    CASTORGUI.GUISlider.prototype.isVisible = function() {
+    CASTORGUI.GUISpinner.prototype.isVisible = function() {
 		return this.numberVisible;
     };
 
