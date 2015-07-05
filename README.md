@@ -17,7 +17,7 @@ Library to display a GUI game as a layer on top of the canvas HTML/CSS. This lib
 * Create button
 * Create slider
 * Create progress
-* Create num
+* Create spinner
 * Create meter
 * Create radio button
 * Create checkbox
