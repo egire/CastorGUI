@@ -45,6 +45,7 @@ var guiTexture = new CASTORGUI.GUITexture("life", "data/image.png", {w:50,h:50,x
 
 var optionsDialog = {w: (guisystem.getCanvasWidth().width - 20), h: 100, x: 8, y: (guisystem.getCanvasWidth().height - 110)};
 var dialog = new CASTORGUI.GUIDialog("dialog", optionsDialog, guisystem);
+dialog.setVisible(true);
 
 var text = new CASTORGUI.GUIText("textDialog", {size:15, text:"Display text here"}, guisystem, false);
 dialog.add(text);
