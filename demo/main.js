@@ -62,7 +62,8 @@ var createGUI = function()
 				var form = new CASTORGUI.GUIWindow("form", {x:(guisystem.getCanvasWidth().width / 2 - 100), y:200 , w:200, h:200}, guisystem);				
 				var optionsGUIText = { x: 10,y: 35, text: "- This window is draggable.<br /><br />- Click the cube behind the window for refresh the scene.<br />", color: "white", size: 12 };
 				var textForWindow = new CASTORGUI.GUIText("textInfo", optionsGUIText, guisystem, false);				
-				form.add(textForWindow);	
+				form.add(textForWindow);
+				form.setVisible(true);
 				box.visibility = true;
 			break;
 		}
