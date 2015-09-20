@@ -2,14 +2,14 @@ var CASTORGUI = CASTORGUI || {};
 
 (function() {
    
-    CASTORGUI.GUIGroup = function(id, options, guimanager) {
+    CASTORGUI.GUIGroup = function(name, options, guimanager) {
         
 		CASTORGUI.GUIManager.call(this, guimanager.canvas, guimanager.canvasCss);
 				
 		this.html = document.body || document.getElementsByTagName('body')[0];
 		if(options) { this.groupPosition = {x:options.x, y:options.y}; }
 		this.guiManager = guimanager;
-        this.id = id;
+        this.name = name;
         this.elementsGoup = [];
         this.guiManager.groups.push(this);
 		this.groupVisible = true;
@@ -30,24 +30,19 @@ var CASTORGUI = CASTORGUI || {};
 		return;
     };
 	
-	 CASTORGUI.GUIGroup.prototype.setVisible = function(bool, fade) {
+	 CASTORGUI.GUIGroup.prototype.setVisible = function(bool) {
 		var display;
-		if(fade == undefined) fade = true;
-		var element = this.getElementById(this.id);
+		 var that = this;
 		if(bool == true) {
 			display = "block";
-			this.groupVisible = true;
-			if(fade == true) { this.fadeIn(element); }
+			this.groupVisible = true;			
 		} else {
 			display = "none";
-			this.groupVisible = false;
-			if(fade == true) { this.fadeOut(element);}
+			this.groupVisible = false;			
 		}
-		if(fade == false) { 
-			this.guiElements.forEach(function(e) {	
-				this.getElementById(e.id).style.display = display;
-			});
-		}
+		this.elementsGoup.forEach(function(e) {	
+			that.getElementById(e.id).style.display = display;
+		});		
 		return;
     };
 	

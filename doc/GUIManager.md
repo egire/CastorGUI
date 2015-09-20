@@ -28,10 +28,10 @@ Set fade in element
 ###fadeOut(element) → void
 Set fade out element
 
-###setVisible(bool) → void
+###setVisible(bool, fade) → void
 Set this GUI all element to visible or invisible
 
-###isVisible(bool, fade) → void
+###isVisible() → void
 Returns all element if is visible or no
 
 ###dispose() → void

@@ -25,10 +25,10 @@ Name | Type | Description
 ###add(element) → void
 add element in the GUIFieldset
 
-###setVisible(bool) → void
+###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 
-###isVisible(bool, fade) → void
+###isVisible() → void
 Returns element if is visible or no
 
 ###dispose() → void

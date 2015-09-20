@@ -33,10 +33,10 @@ Name | Type | Description
 ###updateValue(int) → void
 Set this progress value GUI element 
 
-###setVisible(bool) → void
+###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 
-###isVisible(bool, fade) → void
+###isVisible() → void
 Returns element if is visible or no
 
 ###dispose() → void

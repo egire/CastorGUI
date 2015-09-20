@@ -100,6 +100,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
    
     CASTORGUI.GUIManager.prototype.setVisible = function(bool, fade) {
 		var display;
+		var that = this;
 		if(fade == undefined) fade = true;
 		var element = this.getElementById(this.id);
 		if(bool == true) {
@@ -113,7 +114,7 @@ var Extends = function(ChildClass, ParentClass) { // ClassB (child) herite de cl
 		}
 		if(fade == false) { 
 			this.guiElements.forEach(function(e) {	
-				this.getElementById(e.id).style.display = display;
+				that.getElementById(e.id).style.display = display;
 			});
 		}		
     };

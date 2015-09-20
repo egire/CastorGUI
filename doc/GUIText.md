@@ -32,10 +32,10 @@ Updates the text of the GUI element
 ###getTextWidth(string:text, string:font) → void : static
 Get size the text of the GUI element
 
-###setVisible(bool) → void
+###setVisible(bool, fad) → void
 Set this GUI element to visible or invisible
 
-###isVisible(bool, fade) → void
+###isVisible(e) → void
 Returns element if is visible or no
 
 ###dispose() → void

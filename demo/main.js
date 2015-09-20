@@ -23,7 +23,7 @@ var createGUI = function()
 	groupLife.add(guiTextureLife_25);
 	groupLife.add(guiTextureLife_50);
 	groupLife.add(guiTextureLife_75);
-	groupLife.add(guiTextureLife_100);
+	groupLife.add(guiTextureLife_100);	
 	
 	// GUI text
 	var optionsGUIText = {

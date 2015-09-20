@@ -4,7 +4,7 @@ Creates a new GUIGroup
 ####Parameters
 Name | Type | Description
 ---|---|---
-**id** | string | The id and name element
+**name** | string | The name element
 **options** | json | Options of element
 **guimanager** | GUIManager | The gui manager
 ---
@@ -22,7 +22,7 @@ add element in the GUIGroup
 ###setVisible(bool) → void
 Set this GUI element to visible or invisible
 
-###isVisible(bool, fade) → void
+###isVisible() → void
 Returns element if is visible or no
 
 ###dispose() → void

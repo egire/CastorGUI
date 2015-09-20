@@ -36,10 +36,10 @@ Set this progress value GUI element
 ###getValue(int) → void
 Get value progress GUI element
 
-###setVisible(bool) → void
+###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 
-###isVisible(bool, fade) → void
+###isVisible() → void
 Returns element if is visible or no
 
 ###dispose() → void
