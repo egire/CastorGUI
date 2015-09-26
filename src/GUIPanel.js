@@ -42,7 +42,7 @@ var CASTORGUI = CASTORGUI || {};
 		div.className = this.className;		
 		div.style.position = "absolute";		
 		div.style.zIndex = this.zIndex;		
-		if(this.className == null) {
+		if(this.className == "") {
 			div.style.backgroundImage = this.imageDiv;	
 			div.style.backgroundColor = this.colorDiv;
 			div.style.borderRadius = this.borderRadiusDiv;
